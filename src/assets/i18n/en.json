@@ -1,0 +1,232 @@
+{
+    "navigationbar": {
+        "home": "Home",
+        "registration": "Registration",
+        "history": "History",
+        "lab-report": "Lab Report",
+        "statistics": "Statistics"
+    },
+    "dashboard": {
+        "latest_reading": {
+            "latest-reading": "Latest Reading"
+        },
+        "average": {
+            "weekly-average": "Weekly Average"
+        },
+        "status": {
+            "normal": "Normal",
+            "high": "High",
+            "low": "Low",
+            "elevated": "Elevated"
+        },
+        "add_reading": {
+            "add-new-reading": "Add New Sugar Reading",
+            "placeholder": "Decimal value with . only (e.g. 8.5)",
+            "time": "Measured Time",
+            "fasting": "Fasting",
+            "post_meal_2hrs_after": "Post Meal 2 hours after",
+            "post_meal_1hr_after": "Post Meal 1 hour after",
+            "random": "Random",
+            "save-reading": "Save Reading"
+        },
+        "user_profile": {
+            "user-profile": "User Profile:",
+            "name": "Name",
+            "surname": "Surname",
+            "dob": "DoB",
+            "diabetes-type": "Diabetes-Type",
+            "unit": "Measuring Unit",
+            "post-code": "Post Code",
+            "city": "City",
+            "country": "Country",
+            "delete-profile": "Delete Profile",
+            "delete_confirm": "Are you sure to delete your profile?"
+        },
+        "summary": {
+            "data-summary": "Data Summary",
+            "weekly-avg": "Weekly Avg",
+            "readings": "Readings",
+            "best-time": "Best Time",
+            "worst-time": "Worst Time",
+            "tip": "Tip",
+            "stable": "Stable",
+            "last-week": "Last 7 days",
+            "ai-summary": "AI Summary"
+        },
+        "smart_insight": {
+            "smart-insight": "Smart Insight",
+            "ai-suggestion": "AI Suggestion"
+        },
+        "hba1c": {
+            "prediction": "HbA1c Prediction",
+            "estimation": "Estimated from recent glucose data"
+        },
+        "medications": {
+            "daily-medications": "Daily Medications",
+            "No medications": "No medications",
+            "Insulin": "Insulin",
+            "Tablets": "Tablets"
+        },
+        "line-chart": {
+            "weekly": "Weekly Overview",
+            "chart-title": "Blood Sugar Value"
+        },
+        "delete_profile": {
+            "delete_ok": "Profile deleted successfully",
+            "delete_nok": "An unexpected error occurred"
+        }
+    },
+    "registration": {
+        "title": "Update Your Profile",
+        "name": "Name",
+        "surname": "Surname",
+        "dob": "Date of Birth",
+        "postCode": "Post Code",
+        "city": "City",
+        "country": "Country",
+        "unit": "Preferred Unit",
+        "diabetes-type": "Diabetes Type",
+        "medication": "Medication",
+        "select-medication": "Select Medication",
+        "error-diabetes-type": "Please select diabetes type",
+        "error-medication": "Please select medication",
+        "send": "Send",
+        "diabetes-type-1": "Type 1",
+        "diabetes-type-2": "Type 2",
+        "tablets": "Tablets",
+        "insulin": "Insulin",
+        "no-medication": "No medications",
+        "select-option": "Select medication",
+        "cancel": "Back"
+    },
+    "statistics": {
+        "sugar-statistics": "Sugar Statistics in %",
+        "start-date": "Start Date",
+        "end-date": "End Date",
+        "start": "Start",
+        "normal": "Normal",
+        "high": "High",
+        "low": "Low",
+        "elevated": "Elevated"
+    },
+    "analyser": {
+        "title": "PDF upload for AI analysys",
+        "upload": "Upload & Analyse",
+        "analysys": "AI Analysis",
+        "instructions": "Export the PDF from the History tab for the desired date range and upload it here for AI analysis.Alternatively, PDF reports from the lab can also be uploaded if they contain textual content."
+    },
+    "data": {
+        "title": "Blood Sugar Historic Values",
+        "sortByDate": "Sort by Date",
+        "default": "Default",
+        "descending": "Descending",
+        "ascending": "Ascending",
+        "sortByValue": "Sort By Value",
+        "highToLow": "High to  Low",
+        "lowToHigh": "Low to High",
+        "filterByStatus": "Filter by Status",
+        "high": "High",
+        "low": "Low",
+        "normal": "Normal",
+        "elevated": "Elevated",
+        "dataEntryTime": "Data Entry Time",
+        "measurementTime": "Measurement Time",
+        "value": "Postprandial/Fasting Glucose",
+        "sugarValue": "Sugar Value",
+        "referenceValue": "Reference Value",
+        "status": {
+            "normal": "Normal",
+            "high": "High",
+            "low": "Low",
+            "elevated": "Elevated"
+        },
+        "previous": "Previous",
+        "next": "Next",
+        "sugarStatus": "Sugar Status",
+        "graph": "Graph",
+        "report": "Report"
+    },
+    "reset-email": {
+        "title": "Reset Your Password",
+        "email": "Email",
+        "send": "Send Reset Email",
+        "cancel": "Cancel",
+        "password-sent": "Password sent to :",
+        "error-sending": "Failed finding your username. Please verify your username and try again",
+        "password-reset": "Password Reset",
+        "new-password": "New Password",
+        "confirm-password": "Confirm Password"
+    },
+    "first-registration": {
+        "email": "Email",
+        "password": "Password",
+        "title": "Register Your Profile",
+        "name": "Name",
+        "surname": "Surname",
+        "dob": "Date of Birth",
+        "postCode": "Post Code",
+        "city": "City",
+        "country": "Country",
+        "unit": "Preferred Unit",
+        "diabetes-type": "Diabetes Type",
+        "medication": "Medication",
+        "select-medication": "Select Medication",
+        "error-diabetes-type": "Please select diabetes type",
+        "error-medication": "Please select medication",
+        "send": "Send",
+        "diabetes-type-1": "Type 1",
+        "diabetes-type-2": "Type 2",
+        "tablets": "Tablets",
+        "insulin": "Insulin",
+        "no-medication": "No medications",
+        "select-option": "Select medication",
+        "cancel": "Back",
+        "weak": "Weak",
+        "medium": "Medium",
+        "strong": "Strong",
+        "passwordRequired": "Password required"
+    },
+    "login": {
+        "title": "Login to Your Account",
+        "user": "E-Mail",
+        "password": "Password",
+        "already-registered": "Login",
+        "forgot-password": "Forgot Password?",
+        "not-registered": "Don't have an account?",
+        "sign-up": "Sign up"
+    },
+    "error": {
+        "thankyou": "Thank you!",
+        "something-went-wrong": "Something went wrong. Please try again.",
+        "pdf-error": "Please select both From Date and To Date"
+    },
+    "pdf": {
+        "title": "Blood Sugar Values",
+        "full-name": "Name",
+        "dob": "Surname",
+        "diabetes-type": "Diabetes Type",
+        "city": "City",
+        "date": "Date",
+        "value": "Value",
+        "report-period": "Report Period",
+        "highest": "Highest",
+        "lowest": "Lowest",
+        "average": "Average"
+    },
+    "g24": {
+        "h1": "Easily and safely control your diabetes",
+        "p": "Track your sugar levels, get personalized tips, and stay healthy every day.",
+        "login": "Test it now!",
+        "offer": "G24 application offers you a comprehensive solution to manage your diabetes effectively!",
+        "feature1": "Real-time glucose monitoring",
+        "feature1-desc": "Keep track of your blood sugar levels with ease",
+        "feature2": "Analysis and statistics.PDF export",
+        "feature2-desc": "Charts and trends for better control",
+        "feature3": "Upload lab report,review weekly sugar results using AI",
+        "feature3-desc": "Data analysed by Artificial Intelligence",
+        "feature4": "Security and privacy",
+        "feature4-desc": "All information protected and you can remove your data whenever you want",
+        "feature5": "100% Free",
+        "feature5-desc": "Use features without any cost"
+    }
+}

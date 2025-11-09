@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/base">{{ 'navigationbar.home' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" /registration">{{ 'navigationbar.registration' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" /data">{{ 'navigationbar.history' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" /analyser">{{ 'navigationbar.lab-report' | translate }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href=" /statistics">{{ 'navigationbar.statistics' | translate }}</a>
+        </li>
+      </ul>
+
+
+      <div class="d-flex">
+        <select (change)="switchLanguage($event)" class="language-select" [value]="currentLang()">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="es">Español</option>
+          <option value="tr">Türkçe</option>
+        </select>
+        <button class="btn btn-secondary" type="button" (click)="logout()">Logout</button>
+      </div>
+
+    </div>
+  </div>
+</nav>

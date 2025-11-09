@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>G24</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        /* 💅 UI refinements */
+        .date-input {
+            width: 130px;
+            font-size: 0.9rem;
+            padding: 3px 6px;
+        }
+
+        .date-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .btn-sm {
+            padding: 4px 10px;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+        table th,
+        table td {
+            vertical-align: middle;
+        }
+
+        .pagination-wrapper {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card mt-5">
+                    <div class="card-header text-center">
+                        <h5>{{ 'data.title' | translate }}</h5>
+                    </div>
+
+                    <!-- Filter + Sort Buttons -->
+                    <div class="d-flex flex-wrap justify-content-center align-items-center gap-2 mt-3 mb-3">
+                        <div class="dropdown">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown">
+                                {{ 'data.sortByDate' | translate }}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" (click)="sortByDate('default')">{{
+                                        'data.default' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByDate('desc')">{{
+                                        'data.descending' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByDate('asc')">{{
+                                        'data.ascending' | translate }}</button></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown">
+                                {{ 'data.sortByValue' | translate }}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" (click)="sortByValue('default')">{{
+                                        'data.default' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByValue('low')">{{
+                                        'data.highToLow' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByValue('high')">{{
+                                        'data.lowToHigh' | translate }}</button></li>
+                            </ul>
+                        </div>
+
+                        <div class="dropdown">
+                            <button class="btn btn-primary btn-sm dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown">
+                                {{ 'data.filterByStatus' | translate }}
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><button class="dropdown-item" type="button" (click)="sortByStatus('default')">{{
+                                        'data.default' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByStatus('high')">{{
+                                        'data.high' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByStatus('norm')">{{
+                                        'data.normal' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByStatus('elev')">{{
+                                        'data.elevated' | translate }}</button></li>
+                                <li><button class="dropdown-item" type="button" (click)="sortByStatus('low')">{{
+                                        'data.low' | translate }}</button></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 📅 Date Pickers and Buttons -->
+                    <div class="d-flex justify-content-center align-items-center date-group mb-3">
+                        <input type="date" class="form-control form-control-sm date-input" [(ngModel)]="fromDate"
+                            name="fromDate" placeholder="Von">
+                        <input type="date" class="form-control form-control-sm date-input" [(ngModel)]="toDate"
+                            name="toDate" placeholder="Bis">
+                        <button class="btn btn-primary btn-sm" (click)="generatePDF()">{{ 'data.report' | translate
+                            }}</button>
+                        <button class="btn btn-secondary btn-sm" (click)="generateGraph()">{{ 'data.graph' | translate
+                            }}</button>
+                    </div>
+
+                    <!-- 🧾 Table -->
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover text-center align-middle">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>{{ 'data.measurementTime' | translate }}</th>
+                                    <th>{{ 'data.value' | translate }}</th>
+                                    <th>{{ 'data.sugarValue' | translate }}</th>
+                                    <th>{{ 'data.sugarStatus' | translate }}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (entry of pagedEntries; track entry) {
+                                <tr>
+                                    <td>{{ entry.measurementTime | date:'dd.MM.yyyy HH:mm' }}</td>
+                                    <td>{{ 'dashboard.add_reading.' + entry.value | translate }}</td>
+                                    <td>{{ entry.sugarValue }} {{ entry.unit }}</td>
+                                    <td>
+                                        <span class="badge" [ngClass]="{
+                        'bg-success': entry.status === 'normal',
+                        'bg-danger': entry.status === 'high',
+                        'bg-warning text-dark': entry.status === 'low',
+                        'bg-secondary': entry.status === 'elevated'
+                      }">
+                                            {{ ('data.status.' + entry.status | translate) | titlecase }}
+                                        </span>
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 🔢 Pagination -->
+                    <nav class="pagination-wrapper">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item" [class.disabled]="currentPage === 1">
+                                <button class="page-link" (click)="goToPage(currentPage - 1)">Previous</button>
+                            </li>
+                            <li class="page-item" *ngFor="let page of visiblePages"
+                                [class.active]="page === currentPage">
+                                <button class="page-link" (click)="goToPage(page)">{{ page }}</button>
+                            </li>
+                            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                                <button class="page-link" (click)="goToPage(currentPage + 1)">Next</button>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-10">
+                <app-chart [lineChartLabels]="measurementTimeLabels" [data]="measurementValueLabels"></app-chart>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

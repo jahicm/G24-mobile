@@ -1,0 +1,26 @@
+<div class="container my-5">
+    <h1 class="text-center mb-4">{{'reset-email.title' | translate}}</h1>
+
+    <div class="card shadow p-4 col-12 col-md-6 mx-auto">
+        <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+            <!-- Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label"><b>{{'reset-email.email' | translate}}:</b></label>
+                <input type="email" id="email" class="form-control" formControlName="email">
+                @if(dataForm.get('email')?.touched && dataForm.get('email')?.invalid)
+                {
+                <div class="text-danger">
+                    Email is required.
+                </div>
+                }
+            </div>
+            <div class="d-grid">
+                <button type="submit" class="btn btn-primary" [disabled]="dataForm.invalid">{{'reset-email.email' |
+                    translate}}</button>
+                <button type="button" class="btn btn-secondary" (click)="cancel()">
+                    {{ 'reset-email.cancel' | translate }}
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

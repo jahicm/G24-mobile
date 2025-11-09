@@ -1,2 +1,2 @@
-# G24-mobile
-Mobile version 
+# G24
+Project on diabetes management

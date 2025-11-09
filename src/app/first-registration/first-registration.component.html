@@ -1,0 +1,189 @@
+<div class="container my-5">
+  <h1 class="text-center mb-4">{{'first-registration.title' | translate}}</h1>
+
+  <div class="card shadow p-4 col-12 col-md-6 mx-auto">
+    <form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
+      <!-- Email -->
+      <div class="mb-3">
+        <label for="email" class="form-label"><b>{{'first-registration.email' | translate}}:</b></label>
+        <input type="email" id="email" class="form-control" formControlName="email">
+        @if(dataForm.get('email')?.touched && dataForm.get('email')?.invalid)
+        {
+        <div class="text-danger">
+          Email is required.
+        </div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">
+          <b>{{ 'first-registration.passwordRequired' | translate }}:</b>
+        </label>
+        <input type="password" id="password" class="form-control" formControlName="password"
+          (input)="checkStrength()" />
+
+        <!-- Fehlermeldung -->
+        @if(dataForm.get('password')?.touched && dataForm.get('password')?.invalid) {
+        <div class="text-danger">
+          {{ 'first-registration.passwordRequired' | translate }}
+        </div>
+        }
+
+        <!-- Progressbar für Passwortstärke -->
+        @if(dataForm.get('password')?.value) {
+        <div class="progress mt-2">
+          <div class="progress-bar" role="progressbar" [style.width.%]="passwordStrength" [ngClass]="{
+             'bg-danger': passwordStrength <= 40,
+             'bg-warning': passwordStrength > 40 && passwordStrength < 80,
+             'bg-success': passwordStrength >= 80
+           }">
+          </div>
+        </div>
+        <small class="form-text">{{ passwordStrengthMessage }}</small>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="password_repeat" class="form-label">
+          <b>{{ 'first-registration.password' | translate }}:</b>
+        </label>
+        <input type="password" id="password_repeat" class="form-control" formControlName="password_repeat"
+          (input)="isValid()" />
+
+        <!-- Fehlermeldung -->
+        @if(dataForm.get('password_repeat')?.touched && dataForm.get('password_repeat')?.invalid || !isPasswordMatch) {
+        <div class="text-danger">
+          {{ 'first-registration.passwordRequired' | translate }}
+        </div>
+        }
+      </div>
+      <!-- Name -->
+      <div class="mb-3">
+        <label for="name" class="form-label"><b>{{'first-registration.name' | translate}}:</b></label>
+        <input type="text" id="name" class="form-control" formControlName="name">
+        @if(dataForm.get('name')?.touched && dataForm.get('name')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.name' | translate}}
+        </div>
+        }
+      </div>
+
+      <!-- Last Name -->
+      <div class="mb-3">
+        <label for="lastName" class="form-label"><b>{{'first-registration.surname' | translate}}:</b></label>
+        <input type="text" id="lastName" class="form-control" formControlName="lastName">
+        @if(dataForm.get('lastName')?.touched && dataForm.get('lastName')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.surname' | translate}}
+        </div>
+        }
+      </div>
+
+      <!-- Date of Birth -->
+      <div class="mb-3">
+        <label for="dob" class="form-label"><b>{{'first-registration.dob' | translate}}:</b></label>
+        <input type="date" id="dob" class="form-control" formControlName="dob">
+        @if(dataForm.get('dob')?.touched && dataForm.get('dob')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.dob' | translate}}
+        </div>
+        }
+      </div>
+      <div class="mb-3">
+        <label for="postCode" class="form-label"><b>{{'first-registration.postCode' | translate}}:</b></label>
+        <input type="text" id="postCode" class="form-control" formControlName="postCode">
+        @if(dataForm.get('postCode')?.touched && dataForm.get('postCode')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.postCode' | translate}}
+        </div>
+        }
+      </div>
+      <!-- City -->
+      <div class="mb-3">
+        <label for="city" class="form-label"><b>{{'first-registration.city' | translate}}:</b></label>
+        <input type="text" id="city" class="form-control" formControlName="city">
+        @if(dataForm.get('city')?.touched && dataForm.get('city')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.city' | translate}}
+        </div>
+        }
+      </div>
+      <!-- Country -->
+      <div class="mb-3">
+        <label for="country" class="form-label"><b>{{'first-registration.country' | translate}}:</b></label>
+        <input type="text" id="country" class="form-control" formControlName="country">
+        @if(dataForm.get('country')?.touched && dataForm.get('country')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.country' | translate}}
+        </div>
+        }
+      </div>
+
+      <!-- Preferred Unit -->
+      <div class="mb-3">
+        <label class="form-label"><b>{{'first-registration.unit' | translate}}:</b></label>
+        <div class="btn-group d-flex" role="group">
+          <input type="radio" class="btn-check" id="unit-mg" value="1" formControlName="unit">
+          <label class="btn btn-outline-primary w-50" for="unit-mg">mg/dL</label>
+
+          <input type="radio" class="btn-check" id="unit-mmol" value="2" formControlName="unit">
+          <label class="btn btn-outline-primary w-50" for="unit-mmol">mmol/L</label>
+        </div>
+        @if(dataForm.get('unit')?.touched && dataForm.get('unit')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.unit' | translate}}
+        </div>
+        }
+      </div>
+
+      <!-- Diabetes Type -->
+      <div class="mb-3">
+        <label class="form-label"><b>{{'first-registration.diabetes-type' | translate}}:</b></label>
+        <div class="btn-group d-flex" role="group">
+          <input type="radio" class="btn-check" id="type1" value="Type 1" formControlName="diabetesType">
+          <label class="btn btn-outline-primary w-50" for="type1">{{'first-registration.diabetes-type-1' | translate}}</label>
+
+          <input type="radio" class="btn-check" id="type2" value="Type 2" formControlName="diabetesType">
+          <label class="btn btn-outline-primary w-50" for="type2">{{'first-registration.diabetes-type-2' | translate}}</label>
+        </div>
+        @if(dataForm.get('diabetesType')?.touched && dataForm.get('diabetesType')?.invalid)
+        {
+        <div class="text-danger">
+          {{'error-diabetes-type' | translate}}:
+        </div>
+        }
+      </div>
+
+      <!-- Medication Dropdown -->
+      <div class="mb-3">
+        <label for="medication" class="form-label"><b>{{'first-registration.medication' | translate}}:</b></label>
+        <select id="medication" class="form-select" formControlName="medication">
+          <option value="No medications">{{'first-registration.no-medication' | translate}}</option>
+          <option value="Insulin">{{'first-registration.insulin' | translate}}</option>
+          <option value="Tablets">{{'first-registration.tablets' | translate}}</option>
+        </select>
+        @if(dataForm.get('medication')?.touched && dataForm.get('medication')?.invalid)
+        {
+        <div class="text-danger">
+          {{'first-registration.error-medication' | translate}}
+        </div>
+        }
+      </div>
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <button type="submit" class="btn btn-primary" [disabled]="dataForm.invalid">{{'first-registration.send' |
+          translate}}</button>
+          <button type="button" class="btn btn-secondary" (click)="cancel()">
+          {{ 'first-registration.cancel' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

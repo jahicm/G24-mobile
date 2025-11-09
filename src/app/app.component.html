@@ -1,0 +1,7 @@
+@if (showHeaderFooter) {
+    <app-navigation-bar></app-navigation-bar>
+    <router-outlet />
+    <app-footer></app-footer>
+} @else {
+    <router-outlet />
+}

@@ -1,0 +1,232 @@
+{
+    "navigationbar": {
+        "home": "Ana Sayfa",
+        "registration": "Kayıt",
+        "history": "Geçmiş",
+        "lab-report": "Laboratuvar Raporu",
+        "statistics": "İstatistikler"
+    },
+    "dashboard": {
+        "latest_reading": {
+            "latest-reading": "Son Ölçüm"
+        },
+        "average": {
+            "weekly-average": "Haftalık Ortalama"
+        },
+        "status": {
+            "normal": "Normal",
+            "high": "Yüksek",
+            "low": "Düşük",
+            "elevated": "Yükselmiş"
+        },
+        "add_reading": {
+            "add-new-reading": "Yeni Şeker Ölçümü Ekle",
+            "placeholder": "Sadece ondalık değer (örn. 8.5)",
+            "time": "Ölçüm Zamanı",
+            "fasting": "Açlık",
+            "post_meal_2hrs_after": "Yemekten 2 Saat Sonra",
+            "post_meal_1hr_after": "Yemekten 1 Saat Sonra",
+            "random": "Rastgele",
+            "save-reading": "Ölçümü Kaydet"
+        },
+        "user_profile": {
+            "user-profile": "Kullanıcı Profili:",
+            "name": "Ad",
+            "surname": "Soyad",
+            "dob": "Doğum Tarihi",
+            "diabetes-type": "Diyabet Türü",
+            "unit": "Ölçüm Birimi",
+            "post-code": "Posta Kodu",
+            "city": "Şehir",
+            "country": "Ülke",
+            "delete-profile": "Profili Sil",
+            "delete_confirm": "Profilinizi silmek istediğinizden emin misiniz?"
+        },
+        "summary": {
+            "data-summary": "Veri Özeti",
+            "weekly-avg": "Haftalık Ortalama",
+            "readings": "Ölçümler",
+            "best-time": "En İyi Zaman",
+            "worst-time": "En Kötü Zaman",
+            "tip": "İpucu",
+            "stable": "Stabil",
+            "last-week": "Son 7 Gün",
+            "ai-summary": "Yapay Zeka Özeti"
+        },
+        "smart_insight": {
+            "smart-insight": "Akıllı İçgörü",
+            "ai-suggestion": "Yapay Zeka Önerisi"
+        },
+        "hba1c": {
+            "prediction": "HbA1c Tahmini",
+            "estimation": "Son glukoz verilerinden tahmin"
+        },
+        "medications": {
+            "daily-medications": "Günlük İlaçlar",
+            "No medications": "İlaç Yok",
+            "Insulin": "İnsülin",
+            "Tablets": "Tabletler"
+        },
+        "line-chart": {
+            "weekly": "Haftalık Genel Bakış",
+            "chart-title": "Kan Şekeri Değeri"
+        },
+        "delete_profile": {
+            "delete_ok": "Profil başarıyla silindi",
+            "delete_nok": "Beklenmeyen bir hata oluştu"
+        }
+    },
+    "registration": {
+        "title": "Profilinizi Güncelleyin",
+        "name": "Ad",
+        "surname": "Soyad",
+        "dob": "Doğum Tarihi",
+        "postCode": "Posta Kodu",
+        "city": "Şehir",
+        "country": "Ülke",
+        "unit": "Tercih Edilen Birim",
+        "diabetes-type": "Diyabet Türü",
+        "medication": "İlaç",
+        "select-medication": "İlaç Seçin",
+        "error-diabetes-type": "Lütfen diyabet türünü seçin",
+        "error-medication": "Lütfen ilaç seçin",
+        "send": "Gönder",
+        "diabetes-type-1": "Tip 1",
+        "diabetes-type-2": "Tip 2",
+        "tablets": "Tabletler",
+        "insulin": "İnsülin",
+        "no-medication": "İlaç Yok",
+        "select-option": "İlaç seçin",
+        "cancel": "Geri"
+    },
+    "statistics": {
+        "sugar-statistics": "Şeker İstatistikleri (%)",
+        "start-date": "Başlangıç Tarihi",
+        "end-date": "Bitiş Tarihi",
+        "start": "Başlat",
+        "normal": "Normal",
+        "high": "Yüksek",
+        "low": "Düşük",
+        "elevated": "Yükselmiş"
+    },
+    "analyser": {
+        "title": "Yapay Zeka Analizi için PDF Yükleme",
+        "upload": "Yükle & Analiz Et",
+        "analysys": "Yapay Zeka Analizi",
+        "instructions": "İlgili tarih aralığı için Geçmiş sekmesinden PDF’i dışa aktarın ve buraya yükleyin. Alternatif olarak, laboratuvar raporları da metin içeriyorsa yüklenebilir."
+    },
+    "data": {
+        "title": "Kan Şekeri Tarihsel Değerleri",
+        "sortByDate": "Tarihe Göre Sırala",
+        "default": "Varsayılan",
+        "descending": "Azalan",
+        "ascending": "Artan",
+        "sortByValue": "Değere Göre Sırala",
+        "highToLow": "Yüksekten Düşüğe",
+        "lowToHigh": "Düşükten Yükseğe",
+        "filterByStatus": "Duruma Göre Filtrele",
+        "high": "Yüksek",
+        "low": "Düşük",
+        "normal": "Normal",
+        "elevated": "Yükselmiş",
+        "dataEntryTime": "Veri Giriş Zamanı",
+        "measurementTime": "Ölçüm Zamanı",
+        "value": "Tokluk/Açlık Glukozu",
+        "sugarValue": "Şeker Değeri",
+        "referenceValue": "Referans Değeri",
+        "status": {
+            "normal": "Normal",
+            "high": "Yüksek",
+            "low": "Düşük",
+            "elevated": "Yükselmiş"
+        },
+        "previous": "Önceki",
+        "next": "Sonraki",
+        "sugarStatus": "Şeker Durumu",
+        "graph": "Grafik",
+        "report": "Rapor"
+    },
+    "reset-email": {
+        "title": "Şifrenizi Sıfırlayın",
+        "email": "E-Posta",
+        "send": "Şifre Sıfırlama E-Postası Gönder",
+        "cancel": "İptal",
+        "password-sent": "Şifre gönderildi:",
+        "error-sending": "Kullanıcı adınız bulunamadı. Lütfen kontrol edin ve tekrar deneyin",
+        "password-reset": "Şifre Sıfırlama",
+        "new-password": "Yeni Şifre",
+        "confirm-password": "Şifreyi Onayla"
+    },
+    "first-registration": {
+        "email": "E-Posta",
+        "password": "Şifre",
+        "title": "Profilinizi Kaydedin",
+        "name": "Ad",
+        "surname": "Soyad",
+        "dob": "Doğum Tarihi",
+        "postCode": "Posta Kodu",
+        "city": "Şehir",
+        "country": "Ülke",
+        "unit": "Tercih Edilen Birim",
+        "diabetes-type": "Diyabet Türü",
+        "medication": "İlaç",
+        "select-medication": "İlaç Seçin",
+        "error-diabetes-type": "Lütfen diyabet türünü seçin",
+        "error-medication": "Lütfen ilaç seçin",
+        "send": "Gönder",
+        "diabetes-type-1": "Tip 1",
+        "diabetes-type-2": "Tip 2",
+        "tablets": "Tabletler",
+        "insulin": "İnsülin",
+        "no-medication": "İlaç Yok",
+        "select-option": "İlaç seçin",
+        "cancel": "Geri",
+        "weak": "Zayıf",
+        "medium": "Orta",
+        "strong": "Güçlü",
+        "passwordRequired": "Şifre gerekli"
+    },
+    "login": {
+        "title": "Hesabınıza Giriş Yapın",
+        "user": "E-Posta",
+        "password": "Şifre",
+        "already-registered": "Giriş Yap",
+        "forgot-password": "Şifremi Unuttum?",
+        "not-registered": "Hesabınız yok mu?",
+        "sign-up": "Kayıt Ol"
+    },
+    "error": {
+        "thankyou": "Teşekkürler!",
+        "something-went-wrong": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
+        "pdf-error": "Lütfen Hem Başlangıç Hem Bitiş Tarihini Seçin"
+    },
+    "pdf": {
+        "title": "Kan Şekeri Değerleri",
+        "full-name": "Ad",
+        "dob": "Soyad",
+        "diabetes-type": "Diyabet Türü",
+        "city": "Şehir",
+        "date": "Tarih",
+        "value": "Değer",
+        "report-period": "Rapor Dönemi",
+        "highest": "En Yüksek",
+        "lowest": "En Düşük",
+        "average": "Ortalama"
+    },
+    "g24": {
+        "h1": "Diyabetinizi Kolay ve Güvenli Bir Şekilde Kontrol Edin",
+        "p": "Şeker seviyelerinizi takip edin, kişiselleştirilmiş ipuçları alın ve her gün sağlıklı kalın.",
+        "login": "Hemen Deneyin!",
+        "offer": "G24 uygulaması, diyabetinizi etkili bir şekilde yönetmeniz için kapsamlı bir çözüm sunar!",
+        "feature1": "Gerçek Zamanlı Glukoz Takibi",
+        "feature1-desc": "Kan şekeri seviyelerinizi kolayca takip edin",
+        "feature2": "Analiz ve İstatistikler, PDF Dışa Aktarma",
+        "feature2-desc": "Daha iyi kontrol için grafikler ve trendler",
+        "feature3": "Laboratuvar raporlarını yükleyin, haftalık şeker sonuçlarını AI ile inceleyin",
+        "feature3-desc": "Veriler Yapay Zeka tarafından analiz edilir",
+        "feature4": "Güvenlik ve Gizlilik",
+        "feature4-desc": "Tüm bilgiler korunur ve istediğiniz zaman verilerinizi silebilirsiniz",
+        "feature5": "%100 Ücretsiz",
+        "feature5-desc": "Özellikleri herhangi bir ücret ödemeden kullanın"
+    }
+}

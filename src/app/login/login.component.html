@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - G24</title>
+
+</head>
+
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <h1>G24</h1>
+    </div>
+
+    <h2>{{'login.title' | translate}}</h2>
+    <div>
+      <div class="d-flex">
+        <div class="language-switch">
+          <select class="form-select form-select-sm" (change)="switchLanguage($event)">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+            <option value="fr">Français</option>
+            <option value="it">Italiano</option>
+            <option value="es">Español</option>
+            <option value="tr">Türkçe</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <form class="login-form" (ngSubmit)="login()">
+      <div class="input-group">
+        <label for="username">{{'login.user' | translate}}</label>
+        <input type="text" name="username" [(ngModel)]="username" placeholder="Enter your username" required>
+      </div>
+
+      <div class="input-group">
+        <label for="password">{{'login.password' | translate}}</label>
+        <input type="password" name="password" [(ngModel)]="password" placeholder="Enter your password" required>
+        <a href="/forget" class="forgot-link">{{'login.forgot-password' | translate}}</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+    @if(errorMessage)
+    {
+    <div>
+      <p style="color:red">{{ errorMessage }}</p>
+    </div>
+    }
+    <div class="footer">
+      <p>{{'login.not-registered' | translate}}<a href="/first-registration">{{'login.sign-up' | translate}}</a></p>
+      <p class="copyright">© 2025 G24. All rights reserved.</p>
+    </div>
+  </div>
+</body>
+
+</html>

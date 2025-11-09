@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+/* Optional: Button-Gruppe gleich breit */
+.btn-group label {
+  width: 100%;
+}
+
+/* Fehlermeldungen */
+.text-danger {
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
+
+/* Gemeinsames Button-Styling */
+.btn {
+  border-radius: 12px;         /* Runde Ecken */
+  padding: 0.6rem 1.2rem;      /* Mehr Innenabstand */
+  font-size: 1rem;             /* Angenehme Schriftgröße */
+  font-weight: 500;            /* Etwas kräftiger */
+  transition: all 0.2s ease;   /* Weiche Übergänge bei Hover */
+}
+
+/* Primärer Button (Senden) */
+.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);  /* sanfter Verlauf */
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);               /* leichter Schatten */
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0069d9, #004085);  /* dunklerer Verlauf */
+  transform: translateY(-2px);                           /* leichter Lift-Effekt */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Sekundärer Button (Abbrechen) */
+.btn-secondary {
+  background: #f8f9fa;
+  color: #343a40;
+  border: 1px solid #ced4da;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  color: #212529;
+  transform: translateY(-2px);
+}
+
+/* Disabled State */
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}

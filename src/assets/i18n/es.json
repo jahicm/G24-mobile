@@ -1,0 +1,232 @@
+{
+    "navigationbar": {
+        "home": "Inicio",
+        "registration": "Registro",
+        "history": "Historial",
+        "lab-report": "Informe de laboratorio",
+        "statistics": "Estadísticas"
+    },
+    "dashboard": {
+        "latest_reading": {
+            "latest-reading": "Última lectura"
+        },
+        "average": {
+            "weekly-average": "Promedio semanal"
+        },
+        "status": {
+            "normal": "Normal",
+            "high": "Alto",
+            "low": "Bajo",
+            "elevated": "Elevado"
+        },
+        "add_reading": {
+            "add-new-reading": "Agregar nueva lectura de azúcar",
+            "placeholder": "Valor decimal solo con . (ej. 8.5)",
+            "time": "Hora de medición",
+            "fasting": "Ayuno",
+            "post_meal_2hrs_after": "2 horas después de la comida",
+            "post_meal_1hr_after": "1 hora después de la comida",
+            "random": "Aleatoria",
+            "save-reading": "Guardar lectura"
+        },
+        "user_profile": {
+            "user-profile": "Perfil de usuario:",
+            "name": "Nombre",
+            "surname": "Apellido",
+            "dob": "Fecha de nacimiento",
+            "diabetes-type": "Tipo de diabetes",
+            "unit": "Unidad de medida",
+            "post-code": "Código postal",
+            "city": "Ciudad",
+            "country": "País",
+            "delete-profile": "Eliminar perfil",
+            "delete_confirm": "¿Estás seguro de que deseas eliminar tu perfil?"
+        },
+        "summary": {
+            "data-summary": "Resumen de datos",
+            "weekly-avg": "Promedio semanal",
+            "readings": "Lecturas",
+            "best-time": "Mejor momento",
+            "worst-time": "Peor momento",
+            "tip": "Consejo",
+            "stable": "Estable",
+            "last-week": "Últimos 7 días",
+            "ai-summary": "Resumen IA"
+        },
+        "smart_insight": {
+            "smart-insight": "Insight inteligente",
+            "ai-suggestion": "Sugerencia IA"
+        },
+        "hba1c": {
+            "prediction": "Predicción HbA1c",
+            "estimation": "Estimado a partir de datos recientes de glucosa"
+        },
+        "medications": {
+            "daily-medications": "Medicamentos diarios",
+            "No medications": "Sin medicamentos",
+            "Insulin": "Insulina",
+            "Tablets": "Tabletas"
+        },
+        "line-chart": {
+            "weekly": "Resumen semanal",
+            "chart-title": "Valor de glucosa"
+        },
+        "delete_profile": {
+            "delete_ok": "Perfil eliminado correctamente",
+            "delete_nok": "Ocurrió un error inesperado"
+        }
+    },
+    "registration": {
+        "title": "Actualiza tu perfil",
+        "name": "Nombre",
+        "surname": "Apellido",
+        "dob": "Fecha de nacimiento",
+        "postCode": "Código postal",
+        "city": "Ciudad",
+        "country": "País",
+        "unit": "Unidad preferida",
+        "diabetes-type": "Tipo de diabetes",
+        "medication": "Medicamento",
+        "select-medication": "Selecciona medicamento",
+        "error-diabetes-type": "Selecciona un tipo de diabetes",
+        "error-medication": "Selecciona un medicamento",
+        "send": "Enviar",
+        "diabetes-type-1": "Tipo 1",
+        "diabetes-type-2": "Tipo 2",
+        "tablets": "Tabletas",
+        "insulin": "Insulina",
+        "no-medication": "Sin medicamentos",
+        "select-option": "Selecciona medicamento",
+        "cancel": "Atrás"
+    },
+    "statistics": {
+        "sugar-statistics": "Estadísticas de azúcar en %",
+        "start-date": "Fecha inicio",
+        "end-date": "Fecha fin",
+        "start": "Inicio",
+        "normal": "Normal",
+        "high": "Alto",
+        "low": "Bajo",
+        "elevated": "Elevado"
+    },
+    "analyser": {
+        "title": "Subida de PDF para análisis IA",
+        "upload": "Subir & Analizar",
+        "analysys": "Análisis IA",
+        "instructions": "Exporta el PDF desde la pestaña Historial para el rango de fechas deseado y súbelo aquí para análisis IA. Alternativamente, también se pueden subir informes PDF del laboratorio si contienen texto."
+    },
+    "data": {
+        "title": "Valores históricos de glucosa",
+        "sortByDate": "Ordenar por fecha",
+        "default": "Predeterminado",
+        "descending": "Descendente",
+        "ascending": "Ascendente",
+        "sortByValue": "Ordenar por valor",
+        "highToLow": "Alto a Bajo",
+        "lowToHigh": "Bajo a Alto",
+        "filterByStatus": "Filtrar por estado",
+        "high": "Alto",
+        "low": "Bajo",
+        "normal": "Normal",
+        "elevated": "Elevado",
+        "dataEntryTime": "Hora de registro",
+        "measurementTime": "Hora de medición",
+        "value": "Glucosa postprandial/ayuno",
+        "sugarValue": "Valor de azúcar",
+        "referenceValue": "Valor de referencia",
+        "status": {
+            "normal": "Normal",
+            "high": "Alto",
+            "low": "Bajo",
+            "elevated": "Elevado"
+        },
+        "previous": "Anterior",
+        "next": "Siguiente",
+        "sugarStatus": "Estado azúcar",
+        "graph": "Gráfico",
+        "report": "Informe",
+        "report-period": "Período del informe",
+        "highest": "Valor más alto",
+        "lowest": "Valor más bajo",
+        "average": "Promedio"
+    },
+    "reset-email": {
+        "title": "Restablece tu contraseña",
+        "email": "Correo electrónico",
+        "send": "Enviar email de restablecimiento",
+        "cancel": "Cancelar",
+        "password-sent": "Contraseña enviada a:",
+        "error-sending": "No se pudo encontrar tu usuario. Verifica y vuelve a intentar",
+        "password-reset": "Contraseña restablecida",
+        "new-password": "Nueva contraseña",
+        "confirm-password": "Confirmar contraseña"
+    },
+    "first-registration": {
+        "email": "Correo electrónico",
+        "password": "Contraseña",
+        "title": "Registra tu perfil",
+        "name": "Nombre",
+        "surname": "Apellido",
+        "dob": "Fecha de nacimiento",
+        "postCode": "Código postal",
+        "city": "Ciudad",
+        "country": "País",
+        "unit": "Unidad preferida",
+        "diabetes-type": "Tipo de diabetes",
+        "medication": "Medicamento",
+        "select-medication": "Selecciona medicamento",
+        "error-diabetes-type": "Selecciona un tipo de diabetes",
+        "error-medication": "Selecciona un medicamento",
+        "send": "Enviar",
+        "diabetes-type-1": "Tipo 1",
+        "diabetes-type-2": "Tipo 2",
+        "tablets": "Tabletas",
+        "insulin": "Insulina",
+        "no-medication": "Sin medicamentos",
+        "select-option": "Selecciona medicamento",
+        "cancel": "Atrás",
+        "weak": "Débil",
+        "medium": "Medio",
+        "strong": "Fuerte",
+        "passwordRequired": "Contraseña requerida"
+    },
+    "login": {
+        "title": "Inicia sesión en tu cuenta",
+        "user": "Correo electrónico",
+        "password": "Contraseña",
+        "already-registered": "Iniciar sesión",
+        "forgot-password": "¿Olvidaste tu contraseña?",
+        "not-registered": "¿No tienes cuenta?",
+        "sign-up": "Registrarse"
+    },
+    "error": {
+        "thankyou": "¡Gracias!",
+        "something-went-wrong": "Algo salió mal. Inténtalo nuevamente.",
+        "pdf-error": "Selecciona tanto la fecha de inicio como la de fin"
+    },
+    "pdf": {
+        "title": "Valores de glucosa",
+        "full-name": "Nombre",
+        "dob": "Apellido",
+        "diabetes-type": "Tipo de diabetes",
+        "city": "Ciudad",
+        "date": "Fecha",
+        "value": "Valor"
+    },
+    "g24": {
+        "h1": "Controla tu diabetes de manera fácil y segura",
+        "p": "Monitorea tus niveles de azúcar, recibe consejos personalizados y mantente saludable cada día.",
+        "login": "¡Pruébalo ahora!",
+        "offer": "La aplicación G24 te ofrece una solución completa para gestionar eficazmente tu diabetes!",
+        "feature1": "Monitoreo de glucosa en tiempo real",
+        "feature1-desc": "Sigue fácilmente tus niveles de azúcar",
+        "feature2": "Análisis y estadísticas. Exporta PDF",
+        "feature2-desc": "Gráficos y tendencias para un mejor control",
+        "feature3": "Sube informes de laboratorio, revisa resultados semanales usando IA",
+        "feature3-desc": "Datos analizados por Inteligencia Artificial",
+        "feature4": "Seguridad y privacidad",
+        "feature4-desc": "Toda la información está protegida y puedes eliminar tus datos en cualquier momento",
+        "feature5": "100% Gratis",
+        "feature5-desc": "Usa las funcionalidades sin costo alguno"
+    }
+}

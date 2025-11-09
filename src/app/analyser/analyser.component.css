@@ -1,0 +1,38 @@
+/* Die Karte mit Farbe, Schatten und mehr Padding */
+.custom-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid #0d6efd; /* Bootstrap Primary Blau */
+  box-shadow: 0 8px 16px rgba(13, 110, 253, 0.25);
+  background-color: #f8f9fa; /* leichtes Grau */
+}
+
+/* Button etwas abgerundet und größer */
+.custom-card button {
+  border-radius: 0.5rem;
+  font-weight: 600;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Überschrift der Karte */
+.custom-card label {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #0d6efd;
+}
+.upload-instruction {
+  background-color: #f0f9ff;       /* light blue background */
+  border-left: 5px solid #0d6efd; /* Bootstrap primary blue stripe */
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #212529;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  line-height: 1.5;
+  font-weight:bold
+}
+
