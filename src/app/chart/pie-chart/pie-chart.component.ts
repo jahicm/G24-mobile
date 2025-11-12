@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import Chart from 'chart.js/auto';
 
@@ -9,13 +9,16 @@ import Chart from 'chart.js/auto';
   imports: [TranslateModule],
   styleUrls: ['./pie-chart.component.css']
 })
-export class PieChartComponent implements OnChanges, AfterViewInit {
+export class PieChartComponent implements OnChanges, AfterViewInit, OnDestroy {
   @Input() data: number[] = [];
   @ViewChild('pieCanvas', { static: false }) pieCanvas!: ElementRef<HTMLCanvasElement>;
+
   chartLabel: string = '';
-  public chart: any;
+  public chart: Chart | undefined;
   labels: string[] = [];
   isViewInitialized = false;
+
+  private resizeListener: any;
 
   constructor(private translate: TranslateService) {
     this.translate.get([
@@ -34,11 +37,16 @@ export class PieChartComponent implements OnChanges, AfterViewInit {
       ];
     });
   }
+
   ngAfterViewInit() {
     this.isViewInitialized = true;
     if (this.data.length > 0) {
       this.createChart();
     }
+
+    // Add window resize listener
+    this.resizeListener = () => this.updateChartSize();
+    window.addEventListener('resize', this.resizeListener);
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -47,12 +55,38 @@ export class PieChartComponent implements OnChanges, AfterViewInit {
     }
   }
 
-  createChart() {
+  ngOnDestroy() {
     if (this.chart) {
-      this.chart.destroy(); // prevent chart stacking
+      this.chart.destroy();
+    }
+    window.removeEventListener('resize', this.resizeListener);
+  }
+
+  private updateChartSize() {
+    const canvas = this.pieCanvas.nativeElement;
+    const containerWidth = canvas.parentElement?.offsetWidth || 300;
+
+    if (containerWidth < 768) {
+      canvas.height = 250;
+    } else if (containerWidth < 1200) {
+      canvas.height = 350;
+    } else {
+      canvas.height = 400;
     }
 
-    this.chart = new Chart(this.pieCanvas.nativeElement, {
+    if (this.chart) {
+      this.chart.resize();
+    }
+  }
+
+  private createChart() {
+    if (this.chart) {
+      this.chart.destroy();
+    }
+
+    const canvas = this.pieCanvas.nativeElement;
+
+    this.chart = new Chart(canvas, {
       type: 'pie',
       data: {
         labels: this.labels,
@@ -68,7 +102,8 @@ export class PieChartComponent implements OnChanges, AfterViewInit {
         }]
       },
       options: {
-        aspectRatio: 2.5,
+        responsive: true,
+        maintainAspectRatio: false, // <-- allow dynamic height
         plugins: {
           title: {
             display: true,
@@ -95,5 +130,8 @@ export class PieChartComponent implements OnChanges, AfterViewInit {
         }
       }
     });
+
+    // Set initial chart size
+    this.updateChartSize();
   }
 }

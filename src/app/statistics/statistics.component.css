@@ -1,4 +1,18 @@
-.chart-container {
-    text-align: center;
-    padding: 20px;
+.chart-container canvas {
+    width: 100% !important;  /* ensure it fills container width */
+    height: 250px;            /* default height for small screens */
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+    .chart-container canvas {
+        height: 350px;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .chart-container canvas {
+        height: 400px;
+    }
 }

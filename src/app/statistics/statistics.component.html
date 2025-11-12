@@ -20,7 +20,7 @@
                 <input id="endDate" [(ngModel)]="endDate" type="date" class="form-control mb-4">
                 <button class="btn btn-primary btn-sm" (click)="filterPieChart()">{{'statistics.start' | translate}}</button>
             </div>
-            <div class="col-md-10">
+            <div class="chart-container">
                 <app-piechart [data]="data"></app-piechart>
             </div>
         </div>
