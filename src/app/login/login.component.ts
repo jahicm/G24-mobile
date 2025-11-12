@@ -29,11 +29,11 @@ export class LoginComponent {
     if (lang === null) {
       const language = ($event.target as HTMLSelectElement).value;
       this.appComponent.switchLanguage(language);
-      sessionStorage.setItem('lang', language);
+      localStorage.setItem('lang', language);
     } else {
    
       this.appComponent.switchLanguage(lang);
-      sessionStorage.setItem('lang', lang);
+      localStorage.setItem('lang', lang);
     }
   }
 

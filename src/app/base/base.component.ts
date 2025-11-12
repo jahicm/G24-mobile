@@ -44,7 +44,7 @@ export class BaseComponent implements OnInit,OnDestroy {
   ngOnInit(): void {
 
     this.selectedTimeOfMeal = "fasting";
-    const userId = Utility.decodeUserIdFromToken(sessionStorage.getItem('token') || '');
+    const userId = Utility.decodeUserIdFromToken(localStorage.getItem('token') || '');
 
     this.sharedService.loadUser(userId, true);
     this.sharedService.loadEntries(userId, true);
@@ -151,8 +151,8 @@ export class BaseComponent implements OnInit,OnDestroy {
       next: (result) => {
         if (result) {
           alert(this.translate.instant('dashboard.delete_profile.delete_ok'));
-          sessionStorage.removeItem('cachedUser');
-          sessionStorage.removeItem('lastUserId');
+          localStorage.removeItem('cachedUser');
+          localStorage.removeItem('lastUserId');
           this.router.navigate(['/login']);
         } else {
           alert(this.translate.instant('dashboard.delete_profile.delete_nok'));

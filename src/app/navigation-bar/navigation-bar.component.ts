@@ -18,13 +18,13 @@ export class NavigationBarComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router, private appComponent: AppComponent) { }
 
   ngOnInit(): void {
-    const lang = sessionStorage.getItem('lang');
+    const lang = localStorage.getItem('lang');
     if(lang != null)
       this.appComponent.switchLanguage(lang);
     else
     {
       this.appComponent.switchLanguage('en');
-      sessionStorage.setItem('lang', 'en');
+      localStorage.setItem('lang', 'en');
     }
 
   }
@@ -33,16 +33,16 @@ export class NavigationBarComponent implements OnInit {
     if (lang === null) {
       const language = (event.target as HTMLSelectElement).value;
       this.appComponent.switchLanguage(language);
-      sessionStorage.setItem('lang', language);
+      localStorage.setItem('lang', language);
     } else {
       this.appComponent.switchLanguage(lang);
-      sessionStorage.setItem('lang', lang);
+      localStorage.setItem('lang', lang);
     }
   }
 
   logout() {
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('lang');
+    localStorage.removeItem('token');
+    localStorage.removeItem('lang');
     this.router.navigate(['/login']);
   }
 }

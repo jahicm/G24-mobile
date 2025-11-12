@@ -30,7 +30,7 @@ export class AnalyserComponent {
     if (!this.selectedFile) {
       return;
     }
-    let langauge = sessionStorage.getItem('lang')||'en';
+    let langauge = localStorage.getItem('lang')||'en';
 
     this.isUploading = true;
     this.errorMessage = '';

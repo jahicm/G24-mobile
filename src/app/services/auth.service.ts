@@ -15,17 +15,17 @@ export class AuthService {
     return this.http.post<{ token: string }>(`${environment.apiBaseUrl}/login`, { username, password })
       .pipe(
         tap(response => {
-          sessionStorage.setItem('token', response.token);
+          localStorage.setItem('token', response.token);
         })
       );
   }
 
   logout() {
-    sessionStorage.removeItem('token');
+    localStorage.removeItem('token');
   }
 
   getToken(): string | null {
-    return sessionStorage.getItem('token');
+    return localStorage.getItem('token');
   }
 
   isLoggedIn(): boolean {

@@ -67,7 +67,7 @@ export class RegistrationComponent implements OnInit {
     }
 
     this.user = this.dataForm.value;
-    let cachedUser = sessionStorage.getItem('cachedUser');
+    let cachedUser = localStorage.getItem('cachedUser');
     if (cachedUser) {
       const parsedUser = JSON.parse(cachedUser);
       this.user.userId = parsedUser.userId;

@@ -23,7 +23,7 @@ export class Utility {
 
     static decodeUserIdFromToken(token: string): string {
         const helper = new JwtHelperService();
-        const decodedToken = helper.decodeToken(sessionStorage.getItem('token') || '');
+        const decodedToken = helper.decodeToken(localStorage.getItem('token') || '');
         const userId = decodedToken ? decodedToken.userId : null;
         return userId;
     }

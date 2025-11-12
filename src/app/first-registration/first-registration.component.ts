@@ -73,7 +73,7 @@ export class FirstRegistrationComponent {
     }
 
     this.user = this.dataForm.value;
-    let cachedUser = sessionStorage.getItem('cachedUser');
+    let cachedUser = localStorage.getItem('cachedUser');
     if (cachedUser) {
       const parsedUser = JSON.parse(cachedUser);
       this.user.userId = parsedUser.userId;
@@ -82,7 +82,7 @@ export class FirstRegistrationComponent {
 
       next: (response) => {
         alert(this.translate.instant('error.thankyou'))
-        sessionStorage.removeItem("token");
+        localStorage.removeItem("token");
         this.router.navigate(['/login']);
 
       },

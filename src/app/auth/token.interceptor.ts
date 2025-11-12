@@ -2,8 +2,8 @@
 import { HttpInterceptorFn } from '@angular/common/http';
 
 export const tokenInterceptor: HttpInterceptorFn = (req, next) => {
-  const token = sessionStorage.getItem('token');
-  const lang = sessionStorage.getItem('lang') || 'en';
+  const token = localStorage.getItem('token');
+  const lang = localStorage.getItem('lang') || 'en';
   
   // Skip attaching token for login endpoint
   if (token && !req.url.endsWith('/login')) {

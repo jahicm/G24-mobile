@@ -32,26 +32,26 @@ export class SharedService {
   private loading: boolean = false
 
   constructor(private httpClient: HttpClient) {
-    this.loadUserFromSessionStorage();
+    this.loadUserFromlocalStorage();
     this.loading = true;
   }
 
   getLoading(): boolean {
     return this.loading;
   }
-  private loadUserFromSessionStorage(): void {
-    const cachedUser = sessionStorage.getItem('cachedUser');
-    const cachedUserId = sessionStorage.getItem('lastUserId');
+  private loadUserFromlocalStorage(): void {
+    const cachedUser = localStorage.getItem('cachedUser');
+    const cachedUserId = localStorage.getItem('lastUserId');
     if (cachedUser && cachedUserId) {
       this.userSubject.next(JSON.parse(cachedUser));
       this.lastUserId = cachedUserId;
     }
   }
 
-  private saveUserToSessionStorage(): void {
+  private saveUserTolocalStorage(): void {
     if (this.userSubject.value) {
-      sessionStorage.setItem('cachedUser', JSON.stringify(this.userSubject.value));
-      sessionStorage.setItem('lastUserId', this.lastUserId || '');
+      localStorage.setItem('cachedUser', JSON.stringify(this.userSubject.value));
+      localStorage.setItem('lastUserId', this.lastUserId || '');
     }
   }
 
@@ -71,7 +71,7 @@ export class SharedService {
           this.lastUserId = userId;
           if (!isEqual(this.userSubject.value, user)) {
             this.userSubject.next(user);
-            this.saveUserToSessionStorage();
+            this.saveUserTolocalStorage();
             
           }
         })
@@ -139,7 +139,7 @@ export class SharedService {
   updateUser(user: User): void {
     if (!isEqual(this.userSubject.value, user)) {
       this.userSubject.next(user);
-      this.saveUserToSessionStorage();
+      this.saveUserTolocalStorage();
       this.lastDashboardUserId = null;
       this.dashboardSubject.next(null);
     }
@@ -178,8 +178,8 @@ export class SharedService {
     this.userSubject.next(null);
     this.entriesSubject.next([]);
     this.dashboardSubject.next(null);
-    sessionStorage.removeItem('cachedUser');
-    sessionStorage.removeItem('lastUserId');
+    localStorage.removeItem('cachedUser');
+    localStorage.removeItem('lastUserId');
 
   }
 
