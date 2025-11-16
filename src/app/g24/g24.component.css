@@ -1,153 +1,17 @@
-  body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #333;
-    line-height: 1.6;
-  }
+.image-wrapper {
+  text-align: center;     
+}
 
-  header {
-    background: linear-gradient(to right, #4facfe, #00f2fe);
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px 60px;
-    position: relative;
-    overflow: hidden;
-  }
+.responsive-img {
+  max-width: 100%;
+  width: 70%;            
+  height: auto;
+  margin: 0 auto;         
+  display: inline-block;   
+}
 
-  header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s ease forwards;
-  }
-
-  header p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    animation: fadeInUp 1s ease forwards;
-  }
-
-  .cta-button {
-    background: #ff6b6b;
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-    display: inline-block;
-    margin: 10px;
-  }
-
-  .cta-button:hover {
-    background: #ff3b3b;
-  }
-
-  section {
-    padding: 60px 20px;
-    text-align: center;
-    position: relative;
-  }
-
-  .features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-  }
-
-  .feature {
-    max-width: 250px;
-    text-align: center;
-    animation: fadeInUp 1s ease forwards;
-  }
-
-  .feature img {
-    width: 60px;
-    margin-bottom: 15px;
-  }
-
-  .testimonials {
-    background: #f2f2f2;
-    padding: 60px 20px;
-  }
-
-  .testimonial {
-    max-width: 500px;
-    margin: 20px auto;
-    font-style: italic;
-  }
-
-  .graph-section {
-    background: #e0f7fa;
-    padding: 80px 20px;
-  }
-
-  .graph-container {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-
-  canvas {
-    width: 100%;
-    max-width: 600px;
-    height: 300px;
-  }
-
-  footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-  }
-
-  @keyframes fadeInDown {
-    0% {
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (max-width:768px) {
-    .features {
-      flex-direction: column;
-      gap: 30px;
-    }
-  }
-
-  .d-flex {
-    display: flex;
-  }
-
-  .language-select {
-    margin-left: auto;
-    background-color: #4facfe;
-    border: 2px solid #00f2fe;
-    font-weight: bold;
-    padding: 10px;
-  }
-
-  .center-image {
-  display: block;
-  margin: 0 auto;
-  max-height: auto;
-  width: auto;
+@media (max-width: 600px) {
+  .responsive-img {
+    width: 60%;  
+}
 }

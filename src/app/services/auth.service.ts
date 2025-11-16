@@ -12,7 +12,8 @@ export class AuthService {
   constructor(private http: HttpClient) {}
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<{ token: string }>(`${environment.apiBaseUrl}/login`, { username, password })
+    const headers = { 'X-Client-Type': 'mobile' };
+    return this.http.post<{ token: string }>(`${environment.apiBaseUrl}/login`, { username, password },{headers})
       .pipe(
         tap(response => {
           localStorage.setItem('token', response.token);

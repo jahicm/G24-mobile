@@ -1,6 +1,7 @@
-import { Component,Pipe } from '@angular/core';
+import { Component, Pipe } from '@angular/core';
 import { AppComponent } from '../app.component';
-import { TranslateService,TranslateModule } from '@ngx-translate/core';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-g24',
@@ -11,17 +12,25 @@ import { TranslateService,TranslateModule } from '@ngx-translate/core';
 export class G24Component {
 
   showHeaderFooter = false;
-  constructor(private appComponent: AppComponent,private translateService:TranslateService) { }
+  constructor(private appComponent: AppComponent, private translateService: TranslateService, private router: Router) { }
 
   ngOnInit(): void {
     const lang = localStorage.getItem('lang');
-    if (lang != null)
+    const token = localStorage.getItem('token');
+
+    if (lang != null) {
       this.appComponent.switchLanguage(lang);
-    else {
+
+    } else {
       this.appComponent.switchLanguage('en');
       localStorage.setItem('lang', 'en');
     }
-
+    
+    if (token) {
+      this.router.navigate(['/base']);
+    } else {
+      this.router.navigate(['/login']);
+    }
   }
   switchLanguage(event: Event) {
     const lang = (event.target as HTMLSelectElement).value;

@@ -1,4 +1,4 @@
-import { CommonModule, DatePipe } from '@angular/common';
+import { CommonModule, DatePipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Entry } from '../models/entry';
 import { ChartComponent } from '../chart/chart.component';
@@ -8,11 +8,11 @@ import { DataService } from '../services/dataservice.service';
 import { User } from '../models/user';
 import { SharedService } from '../services/shared.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Filesystem, Directory, FilesystemDirectory, FilesystemEncoding } from '@capacitor/filesystem';
 import { Share } from '@capacitor/share';
+import { Capacitor } from '@capacitor/core';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
-import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-data',
@@ -43,15 +43,17 @@ export class DataComponent implements OnInit {
   maxVisiblePages = 8;
   totalPages: number = 0;
 
-  constructor(private datePipe: DatePipe, private dataService: DataService, private sharedService: SharedService, private translate: TranslateService) { }
+  constructor(
+    private datePipe: DatePipe,
+    private dataService: DataService,
+    private sharedService: SharedService,
+    private translate: TranslateService
+  ) { }
 
   ngOnInit(): void {
-
     const userId = Utility.decodeUserIdFromToken(localStorage.getItem('token') || '');
     this.sharedService.user$.subscribe(user => {
-      if (user) {
-        this.user = user;
-      }
+      if (user) this.user = user;
     });
     this.sharedService.entries$.subscribe(entries => {
       this.filteredValues = entries.slice();
@@ -70,15 +72,11 @@ export class DataComponent implements OnInit {
     const pages = [];
     let start = Math.max(this.currentPage - Math.floor(this.maxVisiblePages / 2), 1);
     let end = Math.min(start + this.maxVisiblePages - 1, this.getTotalPages());
-
-    // Adjust start if we are at the end
     start = Math.max(end - this.maxVisiblePages + 1, 1);
-
-    for (let i = start; i <= end; i++) {
-      pages.push(i);
-    }
+    for (let i = start; i <= end; i++) pages.push(i);
     return pages;
   }
+
   setupPagination(): void {
     this.totalPages = Math.ceil(this.filteredValues.length / this.pageSize);
     this.totalPagesArray = Array.from({ length: this.totalPages }, (_, i) => i + 1);
@@ -98,45 +96,34 @@ export class DataComponent implements OnInit {
   }
 
   sortByValue(order: 'high' | 'low' | 'default'): void {
-    if (order === 'high') {
-      this.filteredValues.sort((a, b) => a.sugarValue - b.sugarValue);
-    } else if (order === 'low') {
-      this.filteredValues.sort((a, b) => b.sugarValue - a.sugarValue);
-    } else {
-      this.filteredValues = this.entries.slice();
-    }
+    if (order === 'high') this.filteredValues.sort((a, b) => a.sugarValue - b.sugarValue);
+    else if (order === 'low') this.filteredValues.sort((a, b) => b.sugarValue - a.sugarValue);
+    else this.filteredValues = this.entries.slice();
     this.currentPage = 1;
     this.setupPagination();
   }
 
   sortByDate(order: 'asc' | 'desc' | 'default'): void {
-    if (order === 'asc') {
-      this.filteredValues.sort((a, b) => new Date(a.measurementTime).getTime() - new Date(b.measurementTime).getTime());
-    } else if (order === 'desc') {
-      this.filteredValues.sort((a, b) => new Date(b.measurementTime).getTime() - new Date(a.measurementTime).getTime());
-    } else {
-      this.filteredValues = this.entries.slice();
-    }
+    if (order === 'asc') this.filteredValues.sort((a, b) => new Date(a.measurementTime).getTime() - new Date(b.measurementTime).getTime());
+    else if (order === 'desc') this.filteredValues.sort((a, b) => new Date(b.measurementTime).getTime() - new Date(a.measurementTime).getTime());
+    else this.filteredValues = this.entries.slice();
     this.currentPage = 1;
     this.setupPagination();
   }
+
   sortByStatus(status: 'high' | 'norm' | 'elev' | 'low' | 'default'): void {
     switch (status) {
       case 'high':
-        this.filteredValues = this.entries.slice();
-        this.filteredValues = this.filteredValues.filter(entry => entry.status === 'high');
+        this.filteredValues = this.entries.filter(entry => entry.status === 'high');
         break;
       case 'norm':
-        this.filteredValues = this.entries.slice();
-        this.filteredValues = this.filteredValues.filter(entry => entry.status === 'normal');
+        this.filteredValues = this.entries.filter(entry => entry.status === 'normal');
         break;
       case 'elev':
-        this.filteredValues = this.entries.slice();
-        this.filteredValues = this.filteredValues.filter(entry => entry.status === 'elevated');
+        this.filteredValues = this.entries.filter(entry => entry.status === 'elevated');
         break;
       case 'low':
-        this.filteredValues = this.entries.slice();
-        this.filteredValues = this.filteredValues.filter(entry => entry.status === 'low');
+        this.filteredValues = this.entries.filter(entry => entry.status === 'low');
         break;
       default:
         this.filteredValues = this.entries.slice();
@@ -145,8 +132,8 @@ export class DataComponent implements OnInit {
     this.currentPage = 1;
     this.setupPagination();
   }
-  generateGraph() {
 
+  generateGraph() {
     if (!this.fromDate || !this.toDate) {
       alert('Please select both From Date and To Date');
       return;
@@ -154,18 +141,17 @@ export class DataComponent implements OnInit {
     this.entries.forEach(entry => Utility.normalizeUnit(entry, this.user));
     this.filteredGraphValues = Utility.convertStringToDateAndFilter(this.entries, this.fromDate, this.toDate);
     this.measurementTimeLabels = this.filteredGraphValues.map(entry =>
-
-      this.datePipe.transform(entry.measurementTime, 'dd/MM/yyyy') || '');
-
+      this.datePipe.transform(entry.measurementTime, 'dd/MM/yyyy') || ''
+    );
     this.measurementValueLabels = this.filteredGraphValues.map(entry => entry.sugarValue);
   }
+
   async generatePDF(): Promise<void> {
     if (!this.fromDate || !this.toDate) {
       alert(this.translate.instant('error.pdf-error'));
       return;
     }
 
-    // Normalize and calculate stats
     this.filteredValues.forEach(entry => Utility.normalizeUnit(entry, this.user));
     const highest = Math.max(...this.filteredValues.map(entry => entry.sugarValue));
     const lowest = Math.min(...this.filteredValues.map(entry => entry.sugarValue));
@@ -174,13 +160,10 @@ export class DataComponent implements OnInit {
     this.sortByDate('asc');
     this.filteredValues = Utility.convertStringToDateAndFilter(this.entries, this.fromDate, this.toDate);
 
-    // ➤ Create PDF document
     const doc = new jsPDF();
     doc.setFontSize(16);
     doc.text(this.translate.instant('pdf.title'), 14, 15);
 
-    // ➤ Add user details
-    doc.setFontSize(11);
     const details = [
       `${this.translate.instant('pdf.full-name')}: ${this.user.name} ${this.user.lastName}`,
       `${this.translate.instant('pdf.dob')}: ${this.user.dob}`,
@@ -194,11 +177,8 @@ export class DataComponent implements OnInit {
       "----------------------------------"
     ];
 
-    details.forEach((line, index) => {
-      doc.text(line, 14, 25 + index * 6);
-    });
+    details.forEach((line, index) => doc.text(line, 14, 25 + index * 6));
 
-    // ➤ Table
     const tableStartY = 25 + details.length * 6 + 5;
     const tableData = this.filteredValues.map(entry => [
       formatDate(entry.measurementTime, 'HH:mm dd.MM.yyyy', 'de-DE'),
@@ -211,7 +191,6 @@ export class DataComponent implements OnInit {
       body: tableData
     });
 
-    // ➤ Convert to Base64 and save with Capacitor Filesystem
     const pdfOutput = doc.output('arraybuffer');
     const pdfBlob = new Blob([pdfOutput], { type: 'application/pdf' });
     const base64Data = await this.convertBlobToBase64(pdfBlob) as string;
@@ -222,10 +201,16 @@ export class DataComponent implements OnInit {
       directory: Directory.Documents
     });
 
+    // ✅ Dynamic file URI
+    const uriResult = await Filesystem.getUri({
+      directory: Directory.Documents,
+      path: 'blood-sugar-report.pdf'
+    });
+
     await Share.share({
       title: 'Blood Sugar Report',
       text: 'Your blood sugar report PDF is ready.',
-      url: 'file:///storage/emulated/0/Documents/blood-sugar-report.pdf',
+      url: uriResult.uri,
       dialogTitle: 'Share PDF'
     });
   }
