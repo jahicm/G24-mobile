@@ -211,7 +211,10 @@
         "report-period": "Report Period",
         "highest": "Highest",
         "lowest": "Lowest",
-        "average": "Average"
+        "average": "Average",
+        "records-count": "Total Records",
+        "share-title": "PDF Report",
+        "share-text":" Here is my blood sugar report."
     },
     "g24": {
         "h1": "Easily and safely control your diabetes",

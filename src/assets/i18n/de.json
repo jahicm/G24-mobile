@@ -4,11 +4,11 @@
         "registration": "Registrierung",
         "history": "Verlauf",
         "lab-report": "Laborbericht",
-        "statistics": "Statistiken"
+        "statistics": "Statistik"
     },
     "dashboard": {
         "latest_reading": {
-            "latest-reading": "Neueste Messung"
+            "latest-reading": "Letzte Messung"
         },
         "average": {
             "weekly-average": "Wöchentlicher Durchschnitt"
@@ -20,18 +20,18 @@
             "elevated": "Erhöht"
         },
         "add_reading": {
-            "add-new-reading": "Neue Blutzuckermessung hinzufügen",
-            "placeholder": "Dezimalwert mit Punkt (z. B. 8.5)",
+            "add-new-reading": "Neue Zuckerwert-Messung hinzufügen",
+            "placeholder": "Dezimalwert nur mit . (z. B. 8.5)",
             "time": "Messzeit",
             "fasting": "Nüchtern",
             "post_meal_2hrs_after": "2 Stunden nach Mahlzeit",
             "post_meal_1hr_after": "1 Stunde nach Mahlzeit",
-            "random": "Beliebig",
+            "random": "Zufällig",
             "save-reading": "Messung speichern"
         },
         "user_profile": {
             "user-profile": "Benutzerprofil:",
-            "name": "Vorname",
+            "name": "Name",
             "surname": "Nachname",
             "dob": "Geburtsdatum",
             "diabetes-type": "Diabetes-Typ",
@@ -44,7 +44,7 @@
         },
         "summary": {
             "data-summary": "Datenübersicht",
-            "weekly-avg": "Wöchentlich",
+            "weekly-avg": "Wöchentlicher Durchschnitt",
             "readings": "Messungen",
             "best-time": "Beste Zeit",
             "worst-time": "Schlechteste Zeit",
@@ -54,12 +54,12 @@
             "ai-summary": "KI-Zusammenfassung"
         },
         "smart_insight": {
-            "smart-insight": "Intelligente Einsicht",
-            "ai-suggestion": "KI-Vorschlag"
+            "smart-insight": "Smart Insight",
+            "ai-suggestion": "KI-Empfehlung"
         },
         "hba1c": {
             "prediction": "HbA1c-Vorhersage",
-            "estimation": "Geschätzt anhand der letzten Glukosedaten"
+            "estimation": "Geschätzt aus den aktuellen Glukosedaten"
         },
         "medications": {
             "daily-medications": "Tägliche Medikamente",
@@ -78,7 +78,7 @@
     },
     "registration": {
         "title": "Profil aktualisieren",
-        "name": "Vorname",
+        "name": "Name",
         "surname": "Nachname",
         "dob": "Geburtsdatum",
         "postCode": "Postleitzahl",
@@ -86,21 +86,21 @@
         "country": "Land",
         "unit": "Bevorzugte Einheit",
         "diabetes-type": "Diabetes-Typ",
-        "medication": "Medikament",
-        "select-medication": "Medikament auswählen",
-        "error-diabetes-type": "Bitte wählen Sie einen Diabetes-Typ aus",
-        "error-medication": "Bitte wählen Sie ein Medikament aus",
+        "medication": "Medikation",
+        "select-medication": "Medikation auswählen",
+        "error-diabetes-type": "Bitte Diabetes-Typ auswählen",
+        "error-medication": "Bitte Medikation auswählen",
         "send": "Senden",
         "diabetes-type-1": "Typ 1",
         "diabetes-type-2": "Typ 2",
         "tablets": "Tabletten",
         "insulin": "Insulin",
         "no-medication": "Keine Medikamente",
-        "select-option": "Medikament auswählen",
+        "select-option": "Medikation auswählen",
         "cancel": "Zurück"
     },
     "statistics": {
-        "sugar-statistics": "Blutzuckerstatistiken in %",
+        "sugar-statistics": "Zuckerstatistik in %",
         "start-date": "Startdatum",
         "end-date": "Enddatum",
         "start": "Start",
@@ -113,7 +113,7 @@
         "title": "PDF-Upload für KI-Analyse",
         "upload": "Hochladen & Analysieren",
         "analysys": "KI-Analyse",
-        "instructions": "Exportieren Sie das PDF aus dem Verlaufs-Tab für den gewünschten Zeitraum und laden Sie es hier für die KI-Analyse hoch. Alternativ können PDF-Berichte aus dem Labor hochgeladen werden, wenn sie textuelle Inhalte enthalten."
+        "instructions": "Exportiere das PDF im Verlauf für den gewünschten Zeitraum und lade es hier zur KI-Analyse hoch. Alternativ können auch Laborberichte hochgeladen werden, sofern sie Text enthalten."
     },
     "data": {
         "title": "Historische Blutzuckerwerte",
@@ -129,10 +129,10 @@
         "low": "Niedrig",
         "normal": "Normal",
         "elevated": "Erhöht",
-        "dataEntryTime": "Erfassungszeit",
+        "dataEntryTime": "Eingabezeit",
         "measurementTime": "Messzeit",
-        "value": "Postprandial/Nüchtern Glukose",
-        "sugarValue": "Blutzuckerwert",
+        "value": "Postprandial/Nüchternwert",
+        "sugarValue": "Zuckerwert",
         "referenceValue": "Referenzwert",
         "status": {
             "normal": "Normal",
@@ -140,24 +140,20 @@
             "low": "Niedrig",
             "elevated": "Erhöht"
         },
-        "previous": "Vorherige",
-        "next": "Nächste",
-        "sugarStatus": "Blutzuckerstatus",
-        "graph": "Diagramm",
-        "report": "Bericht",
-        "report-period": "Berichtszeitraum",
-        "highest": "Höchster Wert",
-        "lowest": "Niedrigster Wert",
-        "average": "Durchschnitt"
+        "previous": "Zurück",
+        "next": "Weiter",
+        "sugarStatus": "Zuckerstatus",
+        "graph": "Grafik",
+        "report": "Bericht"
     },
     "reset-email": {
         "title": "Passwort zurücksetzen",
         "email": "E-Mail",
-        "send": "Zurücksetz-E-Mail senden",
+        "send": "Link zum Zurücksetzen senden",
         "cancel": "Abbrechen",
         "password-sent": "Passwort gesendet an:",
-        "error-sending": "Benutzername nicht gefunden. Bitte überprüfen Sie ihn und versuchen Sie es erneut",
-        "password-reset": "Passwort zurückgesetzt",
+        "error-sending": "Benutzername nicht gefunden. Bitte prüfen und erneut versuchen.",
+        "password-reset": "Passwort zurücksetzen",
         "new-password": "Neues Passwort",
         "confirm-password": "Passwort bestätigen"
     },
@@ -165,7 +161,7 @@
         "email": "E-Mail",
         "password": "Passwort",
         "title": "Profil registrieren",
-        "name": "Vorname",
+        "name": "Name",
         "surname": "Nachname",
         "dob": "Geburtsdatum",
         "postCode": "Postleitzahl",
@@ -173,17 +169,17 @@
         "country": "Land",
         "unit": "Bevorzugte Einheit",
         "diabetes-type": "Diabetes-Typ",
-        "medication": "Medikament",
-        "select-medication": "Medikament auswählen",
-        "error-diabetes-type": "Bitte wählen Sie einen Diabetes-Typ aus",
-        "error-medication": "Bitte wählen Sie ein Medikament aus",
+        "medication": "Medikation",
+        "select-medication": "Medikation auswählen",
+        "error-diabetes-type": "Bitte Diabetes-Typ auswählen",
+        "error-medication": "Bitte Medikation auswählen",
         "send": "Senden",
         "diabetes-type-1": "Typ 1",
         "diabetes-type-2": "Typ 2",
         "tablets": "Tabletten",
         "insulin": "Insulin",
         "no-medication": "Keine Medikamente",
-        "select-option": "Medikament auswählen",
+        "select-option": "Medikation auswählen",
         "cancel": "Zurück",
         "weak": "Schwach",
         "medium": "Mittel",
@@ -191,42 +187,49 @@
         "passwordRequired": "Passwort erforderlich"
     },
     "login": {
-        "title": "In Ihr Konto einloggen",
+        "title": "Anmelden",
         "user": "E-Mail",
         "password": "Passwort",
         "already-registered": "Anmelden",
         "forgot-password": "Passwort vergessen?",
-        "not-registered": "Noch nicht registriert?",
+        "not-registered": "Noch kein Konto?",
         "sign-up": "Registrieren"
     },
     "error": {
-        "thankyou": "Vielen Dank!",
-        "something-went-wrong": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-        "pdf-error": "Bitte wählen Sie sowohl Start- als auch Enddatum"
+        "thankyou": "Danke!",
+        "something-went-wrong": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+        "pdf-error": "Bitte sowohl Von-Datum als auch Bis-Datum auswählen"
     },
     "pdf": {
         "title": "Blutzuckerwerte",
         "full-name": "Name",
-        "dob": "Nachname",
+        "dob": "Geburtsdatum",
         "diabetes-type": "Diabetes-Typ",
         "city": "Stadt",
         "date": "Datum",
-        "value": "Wert"
+        "value": "Wert",
+        "report-period": "Berichtszeitraum",
+        "highest": "Höchster Wert",
+        "lowest": "Niedrigster Wert",
+        "average": "Durchschnitt",
+        "records-count": "Gesamtanzahl der Einträge",
+        "share-title": "PDF-Bericht",
+        "share-text": "Hier ist mein Blutzuckerbericht."
     },
     "g24": {
-        "h1": "Kontrollieren Sie Ihren Diabetes einfach und sicher",
-        "p": "Verfolgen Sie Ihre Blutzuckerwerte, erhalten Sie personalisierte Tipps und bleiben Sie jeden Tag gesund.",
+        "h1": "Kontrollieren Sie Ihre Diabetes einfach und sicher",
+        "p": "Verfolgen Sie Ihre Zuckerwerte, erhalten Sie personalisierte Tipps und bleiben Sie gesund.",
         "login": "Jetzt testen!",
-        "offer": "Die G24-Anwendung bietet Ihnen eine umfassende Lösung zur effektiven Verwaltung Ihres Diabetes!",
+        "offer": "Die G24-App bietet Ihnen eine umfassende Lösung zur effektiven Diabetesverwaltung!",
         "feature1": "Echtzeit-Glukoseüberwachung",
         "feature1-desc": "Behalten Sie Ihre Blutzuckerwerte mühelos im Blick",
         "feature2": "Analyse und Statistik. PDF-Export",
         "feature2-desc": "Diagramme und Trends für bessere Kontrolle",
-        "feature3": "Laborbericht hochladen, wöchentliche Blutzuckerergebnisse mit KI überprüfen",
-        "feature3-desc": "Daten analysiert von künstlicher Intelligenz",
+        "feature3": "Labordaten hochladen, wöchentliche Ergebnisse per KI analysieren",
+        "feature3-desc": "Daten analysiert durch künstliche Intelligenz",
         "feature4": "Sicherheit und Datenschutz",
-        "feature4-desc": "Alle Informationen geschützt und Sie können Ihre Daten jederzeit löschen",
-        "feature5": "100% Kostenlos",
-        "feature5-desc": "Funktionen ohne Kosten nutzen"
+        "feature4-desc": "Alle Daten geschützt, jederzeit löschbar",
+        "feature5": "100% kostenlos",
+        "feature5-desc": "Alle Funktionen kostenlos nutzbar"
     }
 }

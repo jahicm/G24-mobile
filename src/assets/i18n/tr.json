@@ -21,7 +21,7 @@
         },
         "add_reading": {
             "add-new-reading": "Yeni Şeker Ölçümü Ekle",
-            "placeholder": "Sadece ondalık değer (örn. 8.5)",
+            "placeholder": "Sadece . ile ondalık değer (ör. 8.5)",
             "time": "Ölçüm Zamanı",
             "fasting": "Açlık",
             "post_meal_2hrs_after": "Yemekten 2 Saat Sonra",
@@ -40,7 +40,7 @@
             "city": "Şehir",
             "country": "Ülke",
             "delete-profile": "Profili Sil",
-            "delete_confirm": "Profilinizi silmek istediğinizden emin misiniz?"
+            "delete_confirm": "Profilinizi silmek istediğinize emin misiniz?"
         },
         "summary": {
             "data-summary": "Veri Özeti",
@@ -59,7 +59,7 @@
         },
         "hba1c": {
             "prediction": "HbA1c Tahmini",
-            "estimation": "Son glukoz verilerinden tahmin"
+            "estimation": "Son glikoz verilerinden tahmin"
         },
         "medications": {
             "daily-medications": "Günlük İlaçlar",
@@ -110,10 +110,10 @@
         "elevated": "Yükselmiş"
     },
     "analyser": {
-        "title": "Yapay Zeka Analizi için PDF Yükleme",
+        "title": "Yapay Zeka Analizi için PDF Yükle",
         "upload": "Yükle & Analiz Et",
         "analysys": "Yapay Zeka Analizi",
-        "instructions": "İlgili tarih aralığı için Geçmiş sekmesinden PDF’i dışa aktarın ve buraya yükleyin. Alternatif olarak, laboratuvar raporları da metin içeriyorsa yüklenebilir."
+        "instructions": "İlgili tarih aralığı için Geçmiş sekmesinden PDF’i dışa aktarın ve buraya yükleyin. Alternatif olarak, laboratuvar PDF raporları da metin içeriyorsa yüklenebilir."
     },
     "data": {
         "title": "Kan Şekeri Tarihsel Değerleri",
@@ -131,9 +131,9 @@
         "elevated": "Yükselmiş",
         "dataEntryTime": "Veri Giriş Zamanı",
         "measurementTime": "Ölçüm Zamanı",
-        "value": "Tokluk/Açlık Glukozu",
+        "value": "Tok/ Açlık Glukozu",
         "sugarValue": "Şeker Değeri",
-        "referenceValue": "Referans Değeri",
+        "referenceValue": "Referans Değer",
         "status": {
             "normal": "Normal",
             "high": "Yüksek",
@@ -148,17 +148,17 @@
     },
     "reset-email": {
         "title": "Şifrenizi Sıfırlayın",
-        "email": "E-Posta",
-        "send": "Şifre Sıfırlama E-Postası Gönder",
+        "email": "E-posta",
+        "send": "Sıfırlama E-postası Gönder",
         "cancel": "İptal",
-        "password-sent": "Şifre gönderildi:",
+        "password-sent": "Şifre gönderildi :",
         "error-sending": "Kullanıcı adınız bulunamadı. Lütfen kontrol edin ve tekrar deneyin",
         "password-reset": "Şifre Sıfırlama",
         "new-password": "Yeni Şifre",
         "confirm-password": "Şifreyi Onayla"
     },
     "first-registration": {
-        "email": "E-Posta",
+        "email": "E-posta",
         "password": "Şifre",
         "title": "Profilinizi Kaydedin",
         "name": "Ad",
@@ -188,17 +188,17 @@
     },
     "login": {
         "title": "Hesabınıza Giriş Yapın",
-        "user": "E-Posta",
+        "user": "E-posta",
         "password": "Şifre",
-        "already-registered": "Giriş Yap",
-        "forgot-password": "Şifremi Unuttum?",
+        "already-registered": "Giriş",
+        "forgot-password": "Şifrenizi mi unuttunuz?",
         "not-registered": "Hesabınız yok mu?",
         "sign-up": "Kayıt Ol"
     },
     "error": {
         "thankyou": "Teşekkürler!",
         "something-went-wrong": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
-        "pdf-error": "Lütfen Hem Başlangıç Hem Bitiş Tarihini Seçin"
+        "pdf-error": "Lütfen hem Başlangıç hem Bitiş tarihini seçin"
     },
     "pdf": {
         "title": "Kan Şekeri Değerleri",
@@ -211,22 +211,25 @@
         "report-period": "Rapor Dönemi",
         "highest": "En Yüksek",
         "lowest": "En Düşük",
-        "average": "Ortalama"
+        "average": "Ortalama",
+        "records-count": "Toplam Kayıt",
+        "share-title": "PDF Raporu",
+        "share-text": "İşte kan şekeri raporum."
     },
     "g24": {
-        "h1": "Diyabetinizi Kolay ve Güvenli Bir Şekilde Kontrol Edin",
-        "p": "Şeker seviyelerinizi takip edin, kişiselleştirilmiş ipuçları alın ve her gün sağlıklı kalın.",
-        "login": "Hemen Deneyin!",
+        "h1": "Diyabetinizi kolay ve güvenli bir şekilde kontrol edin",
+        "p": "Şeker seviyenizi takip edin, kişiselleştirilmiş ipuçları alın ve her gün sağlıklı kalın.",
+        "login": "Şimdi deneyin!",
         "offer": "G24 uygulaması, diyabetinizi etkili bir şekilde yönetmeniz için kapsamlı bir çözüm sunar!",
-        "feature1": "Gerçek Zamanlı Glukoz Takibi",
+        "feature1": "Gerçek zamanlı glukoz takibi",
         "feature1-desc": "Kan şekeri seviyelerinizi kolayca takip edin",
-        "feature2": "Analiz ve İstatistikler, PDF Dışa Aktarma",
+        "feature2": "Analiz ve istatistikler. PDF ihracı",
         "feature2-desc": "Daha iyi kontrol için grafikler ve trendler",
-        "feature3": "Laboratuvar raporlarını yükleyin, haftalık şeker sonuçlarını AI ile inceleyin",
-        "feature3-desc": "Veriler Yapay Zeka tarafından analiz edilir",
+        "feature3": "Laboratuvar raporunu yükleyin, haftalık sonuçları IA ile inceleyin",
+        "feature3-desc": "Veriler Yapay Zeka ile analiz edilir",
         "feature4": "Güvenlik ve Gizlilik",
-        "feature4-desc": "Tüm bilgiler korunur ve istediğiniz zaman verilerinizi silebilirsiniz",
+        "feature4-desc": "Tüm bilgiler korunur ve verilerinizi istediğiniz zaman silebilirsiniz",
         "feature5": "%100 Ücretsiz",
-        "feature5-desc": "Özellikleri herhangi bir ücret ödemeden kullanın"
+        "feature5-desc": "Tüm özellikleri herhangi bir ücret ödemeden kullanın"
     }
 }
