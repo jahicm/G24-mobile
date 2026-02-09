@@ -165,6 +165,7 @@ input[type="password"]:focus {
 .language-switch {
     text-align: right;
     margin-bottom: 10px;
+    background-color: #4a6cf7;
 }
 
 .language-switch select {
